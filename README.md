@@ -1,6 +1,6 @@
 # Research
 
-Public repository for in-progress research in philosophy of physics and German idealism.
+Public repository for in-progress research in philosophy.
 
 ## Contents
 
