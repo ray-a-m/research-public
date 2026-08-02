@@ -3,8 +3,11 @@
      preamble.tex analog — presentation config stays hand-written).
      org-site-export.el substitutes the double-braced TITLE / ROOT /
      BODY tokens (every occurrence — which is why this comment must
-     not spell them out) and writes the result into research-public.
-     Edit here, then `publish site` to regenerate every page. -->
+     not spell them out), marks the one nav link that targets the
+     page being exported with aria-current (style.css underlines
+     exactly that link), and writes the result into research-public.
+     Nav links stay alphabetized by label. Edit here, then
+     `publish site` to regenerate every page. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -14,18 +17,17 @@
 </head>
 <body>
 <header>
-<p class="site-title"><a href="../">Raymond Maung</a></p>
 <nav>
 <a href="../">About</a>
-<a href="../research/">Research</a>
-<a href="../teaching/">Teaching</a>
-<a href="../poetry/">Poetry</a>
 <a href="../contact/">Contact</a>
+<a href="../cv/">CV</a>
 <a href="../for-students/">For Students</a>
+<a href="../poetry/">Poetry</a>
+<a aria-current="page" href="../research/">Research</a>
+<a href="../teaching/">Teaching</a>
 </nav>
 </header>
 <main>
-<h1>Research</h1>
 
 
 </main>

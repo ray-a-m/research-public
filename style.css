@@ -10,9 +10,8 @@
  * point, not a commitment. */
 :root {
   --font-body: "Ibarra Real Nova", Georgia, serif;
-  --font-accent: "IBM Plex Mono", ui-monospace, monospace; /* site title + nav */
+  --font-accent: "IBM Plex Mono", ui-monospace, monospace; /* nav */
   --size-body: 1.125rem;
-  --size-title: 1rem;        /* the mono site title */
   --measure: 36rem;          /* column width */
   --leading: 1.6;
   --color-fg: #111;
@@ -59,22 +58,40 @@ body {
 }
 
 header { margin-bottom: 3rem; }
-.site-title {
-  font-family: var(--font-accent);
-  font-size: var(--size-title);
-  margin-bottom: 1.5rem;
-}
-.site-title a { text-decoration: none; }
 nav {
   font-family: var(--font-accent);
   font-size: 0.85rem;
 }
-nav a { margin-right: 1.25rem; }
+nav a { margin-right: 1.25rem; text-decoration: none; }
+nav a[aria-current] { text-decoration: underline; }
 
-h1 { font-size: 1.6rem; line-height: 1.25; margin-bottom: 1.5rem; }
 h2 { font-size: 1.25rem; margin-top: 2rem; }
 
 a { color: var(--color-link); }
 
 ul.papers { list-style: none; padding: 0; }
 ul.papers li { margin-bottom: 0.75rem; }
+
+/* CV page — layout for the body that org-site-export.el generates from
+ * the CV's own source (the web analog of the \entry macros in
+ * cv/preamble.tex; the class names mirror the macro names). */
+.cv-sub { font-size: 0.9em; }
+.cv-entry {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+.cv-date { text-align: right; }
+p.cv-entry.cv-sub { padding-left: 1.5rem; }
+.cv-details { list-style: none; padding-left: 1.5rem; font-size: 0.9em; }
+.cv-details li { display: flex; justify-content: space-between; gap: 1rem; }
+.cv-subline { padding-left: 1.5rem; font-size: 0.9em; }
+.cv-pres { margin-bottom: 1rem; }
+.cv-pres .cv-entry { margin-bottom: 0.15rem; }
+.cv-venue {
+  padding-left: 1.5rem;
+  font-size: 0.9em;
+  font-style: italic;
+  margin-bottom: 0;
+}
