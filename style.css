@@ -1,0 +1,80 @@
+/* Hand-written stylesheet for raymondmaung.com — the preamble.tex
+ * analog.  Austere on purpose: text, one column, nothing else.
+ *
+ * THEME KNOBS — the whole look lives in this :root block (the CSS
+ * analog of \paperfontsize/\paperspacing in shared/preamble.tex).
+ * Everything below only consumes these variables: re-theming is an
+ * edit here (plus, for a new typeface, woff2 files in shared/fonts/
+ * and the @font-face rules beneath), then `publish site`.
+ * Current values approximate the WordPress Ueno look — a starting
+ * point, not a commitment. */
+:root {
+  --font-body: "Ibarra Real Nova", Georgia, serif;
+  --font-accent: "IBM Plex Mono", ui-monospace, monospace; /* site title + nav */
+  --size-body: 1.125rem;
+  --size-title: 1rem;        /* the mono site title */
+  --measure: 36rem;          /* column width */
+  --leading: 1.6;
+  --color-fg: #111;
+  --color-bg: #fff;
+  --color-link: #111;
+}
+
+/* Self-hosted fonts (both SIL OFL) — no third-party requests. */
+@font-face {
+  font-family: "Ibarra Real Nova";
+  src: url("fonts/ibarra-real-nova-regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Ibarra Real Nova";
+  src: url("fonts/ibarra-real-nova-italic.woff2") format("woff2");
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "Ibarra Real Nova";
+  src: url("fonts/ibarra-real-nova-700.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("fonts/ibm-plex-mono-regular.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+
+/* Normalization — three lines, no reset framework. */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+h1, h2, h3, p, ul { margin: 0 0 1rem; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  line-height: var(--leading);
+  color: var(--color-fg);
+  background: var(--color-bg);
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+header { margin-bottom: 3rem; }
+.site-title {
+  font-family: var(--font-accent);
+  font-size: var(--size-title);
+  margin-bottom: 1.5rem;
+}
+.site-title a { text-decoration: none; }
+nav {
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+}
+nav a { margin-right: 1.25rem; }
+
+h1 { font-size: 1.6rem; line-height: 1.25; margin-bottom: 1.5rem; }
+h2 { font-size: 1.25rem; margin-top: 2rem; }
+
+a { color: var(--color-link); }
+
+ul.papers { list-style: none; padding: 0; }
+ul.papers li { margin-bottom: 0.75rem; }
