@@ -2,6 +2,8 @@
 
 Public repository for in-progress research in philosophy.
 
+This repository is also the deploy target for [raymondmaung.com](https://raymondmaung.com): the HTML pages here are generated from org sources in the private `website` repo (never hand-edited) and served by GitHub Pages.
+
 ## Contents
 
 - **`documents/`** — dissertation and standalone papers
