@@ -12,7 +12,8 @@
   --font-body: "Ibarra Real Nova", Georgia, serif;
   --font-accent: "IBM Plex Mono", ui-monospace, monospace; /* nav */
   --size-body: 1.125rem;
-  --measure: 36rem;          /* column width */
+  --measure: 42rem;          /* column width — wide enough for the nav
+                                to sit on one row */
   --leading: 1.6;
   --color-fg: #111;
   --color-bg: #fff;
@@ -61,6 +62,7 @@ header { margin-bottom: 3rem; }
 nav {
   font-family: var(--font-accent);
   font-size: 0.85rem;
+  padding-left: 2rem;   /* tabs sit right of the body's left edge */
 }
 nav a { margin-right: 1.25rem; text-decoration: none; }
 nav a[aria-current] { text-decoration: underline; }
@@ -74,7 +76,10 @@ ul.papers li { margin-bottom: 0.75rem; }
 
 /* CV page — layout for the body that org-site-export.el generates from
  * the CV's own source (the web analog of the \entry macros in
- * cv/preamble.tex; the class names mirror the macro names). */
+ * cv/preamble.tex; the class names mirror the macro names).  The .cv
+ * wrapper steps the whole body down from prose size: a CV is dense
+ * lines, not paragraphs, and reads oversized at body size. */
+.cv { font-size: 1rem; }
 .cv-sub { font-size: 0.9em; }
 .cv-entry {
   display: flex;
